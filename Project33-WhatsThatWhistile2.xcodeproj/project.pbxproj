@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		400478652F0EC31600DB906C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400478592F0EC31600DB906C /* AppDelegate.swift */; };
+		400478662F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400478602F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodeld */; };
+		400478672F0EC31600DB906C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400478612F0EC31600DB906C /* SceneDelegate.swift */; };
+		400478682F0EC31600DB906C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400478622F0EC31600DB906C /* ViewController.swift */; };
+		400478692F0EC31600DB906C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4004785A2F0EC31600DB906C /* Assets.xcassets */; };
+		4004786B2F0EC31600DB906C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4004785D2F0EC31600DB906C /* LaunchScreen.storyboard */; };
+		4004786C2F0EC31600DB906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4004785F2F0EC31600DB906C /* Main.storyboard */; };
+		400478702F0EC83600DB906C /* RecordWhistleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		400478322F0EBE6400DB906C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,27 +38,18 @@
 		400478182F0EBE5B00DB906C /* Project33-WhatsThatWhistile2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project33-WhatsThatWhistile2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		400478312F0EBE6400DB906C /* Project33-WhatsThatWhistile2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project33-WhatsThatWhistile2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4004783B2F0EBE6400DB906C /* Project33-WhatsThatWhistile2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project33-WhatsThatWhistile2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		400478592F0EC31600DB906C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4004785A2F0EC31600DB906C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4004785B2F0EC31600DB906C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4004785C2F0EC31600DB906C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4004785E2F0EC31600DB906C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		400478612F0EC31600DB906C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		400478622F0EC31600DB906C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		400478642F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project33_WhatsThatWhistile2.xcdatamodel; sourceTree = "<group>"; };
+		4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		400478432F0EBE6400DB906C /* Exceptions for "Project33-WhatsThatWhistile2" folder in "Project33-WhatsThatWhistile2" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 400478172F0EBE5B00DB906C /* Project33-WhatsThatWhistile2 */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4004781A2F0EBE5B00DB906C /* Project33-WhatsThatWhistile2 */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				400478432F0EBE6400DB906C /* Exceptions for "Project33-WhatsThatWhistile2" folder in "Project33-WhatsThatWhistile2" target */,
-			);
-			path = "Project33-WhatsThatWhistile2";
-			sourceTree = "<group>";
-		};
 		400478342F0EBE6400DB906C /* Project33-WhatsThatWhistile2Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Project33-WhatsThatWhistile2Tests";
@@ -88,7 +90,7 @@
 		4004780F2F0EBE5B00DB906C = {
 			isa = PBXGroup;
 			children = (
-				4004781A2F0EBE5B00DB906C /* Project33-WhatsThatWhistile2 */,
+				400478632F0EC31600DB906C /* Project33-WhatsThatWhistile2 */,
 				400478342F0EBE6400DB906C /* Project33-WhatsThatWhistile2Tests */,
 				4004783E2F0EBE6400DB906C /* Project33-WhatsThatWhistile2UITests */,
 				400478192F0EBE5B00DB906C /* Products */,
@@ -105,6 +107,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		400478632F0EC31600DB906C /* Project33-WhatsThatWhistile2 */ = {
+			isa = PBXGroup;
+			children = (
+				4004786D2F0EC33400DB906C /* Support */,
+				4004786E2F0EC3A600DB906C /* Screens */,
+				4004785B2F0EC31600DB906C /* Info.plist */,
+			);
+			path = "Project33-WhatsThatWhistile2";
+			sourceTree = "<group>";
+		};
+		4004786D2F0EC33400DB906C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4004785D2F0EC31600DB906C /* LaunchScreen.storyboard */,
+				4004785F2F0EC31600DB906C /* Main.storyboard */,
+				400478592F0EC31600DB906C /* AppDelegate.swift */,
+				400478612F0EC31600DB906C /* SceneDelegate.swift */,
+				400478602F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodeld */,
+				4004785A2F0EC31600DB906C /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		4004786E2F0EC3A600DB906C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				400478622F0EC31600DB906C /* ViewController.swift */,
+				4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +153,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				4004781A2F0EBE5B00DB906C /* Project33-WhatsThatWhistile2 */,
 			);
 			name = "Project33-WhatsThatWhistile2";
 			packageProductDependencies = (
@@ -225,6 +256,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400478692F0EC31600DB906C /* Assets.xcassets in Resources */,
+				4004786B2F0EC31600DB906C /* LaunchScreen.storyboard in Resources */,
+				4004786C2F0EC31600DB906C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400478652F0EC31600DB906C /* AppDelegate.swift in Sources */,
+				400478662F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodeld in Sources */,
+				400478672F0EC31600DB906C /* SceneDelegate.swift in Sources */,
+				400478702F0EC83600DB906C /* RecordWhistleVC.swift in Sources */,
+				400478682F0EC31600DB906C /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +319,25 @@
 			targetProxy = 4004783C2F0EBE6400DB906C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4004785D2F0EC31600DB906C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4004785C2F0EC31600DB906C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4004785F2F0EC31600DB906C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4004785E2F0EC31600DB906C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		400478452F0EBE6400DB906C /* Debug */ = {
@@ -571,6 +629,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		400478602F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				400478642F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodel */,
+			);
+			currentVersion = 400478642F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodel */;
+			path = Project33_WhatsThatWhistile2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 400478102F0EBE5B00DB906C /* Project object */;
 }
