@@ -21,6 +21,8 @@ class RecordWhistleVC: UIViewController
 
     }
     
+    //-------------------------------------//
+    // MARK: - CONFIGURATION
     
     func configStackView()
     {
