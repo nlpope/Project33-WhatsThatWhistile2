@@ -3,10 +3,15 @@
 //  Created by: Noah Pope on 1/7/26.
 
 import UIKit
+import AVFoundation
 
 class RecordWhistleVC: UIViewController
 {
     var stackView: UIStackView!
+    
+    var recordButton: UIButton!
+    var recordingSession: AVAudioSession!
+    var whistleRecorder: AVAudioRecorder!
     
     
     override func loadView()
@@ -18,7 +23,8 @@ class RecordWhistleVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        configNavigation()
+        configRecordingSession()
     }
     
     //-------------------------------------//
@@ -27,8 +33,6 @@ class RecordWhistleVC: UIViewController
     func configStackView()
     {
         view = UIView()
-        //view = view that controller manages
-        //UIView = object that manages content for rectangular area on screen
         view.backgroundColor = UIColor.gray
         
         stackView = UIStackView()
@@ -48,5 +52,41 @@ class RecordWhistleVC: UIViewController
         //OG CODE FROM BOOK, I REFACTORED IT TO REPEAT THE .ISACTIVE STUFF
 //        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
 //        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    
+    func configNavigation()
+    {
+        title = "Record your whistle"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Record", style: .plain, target: nil, action: nil)
+    }
+    
+    
+    func configRecordingSession()
+    {
+        recordingSession = AVAudioSession.sharedInstance()
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async { allowed ? self.loadRecordingUI() : self.loadFailUI() }
+            }
+        } catch {
+            self.loadFailUI()
+        }
+    }
+    
+    //-------------------------------------//
+    // MARK: - MAIN METHODS
+    
+    func loadRecordingUI()
+    {
+        
+    }
+    
+    
+    func loadFailUI()
+    {
+        
     }
 }
