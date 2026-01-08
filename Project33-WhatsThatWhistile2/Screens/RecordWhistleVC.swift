@@ -81,12 +81,56 @@ class RecordWhistleVC: UIViewController
     
     func loadRecordingUI()
     {
+        recordButton = UIButton()
+        recordButton.translatesAutoresizingMaskIntoConstraints = false
+        recordButton.setTitle("Tap to Record", for: .normal)
+        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
         
+        stackView.addArrangedSubview(recordButton)
     }
     
     
     func loadFailUI()
     {
+        let failLabel = UILabel()
+        failLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        failLabel.text = "Recording failed. Please ensure the app has access to your microphone."
+        failLabel.numberOfLines = 0
         
+        stackView.addArrangedSubview(failLabel)
+    }
+    
+    
+    @objc func recordTapped()
+    {
+        
+    }
+    
+    
+    func startRecording()
+    {
+        view.backgroundColor = UIColor(red: 0.6, green: 0, blue: 0, alpha: 1)
+        
+    }
+    
+    //-------------------------------------//
+    // MARK: - WRITING TO MEMORY (TO DOCUMENTS DIRECTORY)
+    
+    class func getDocumentsDirectory() -> URL
+    {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        // use Finder to go to what's printed beneath after recording to ensure file writing works
+        print("documentsDirectoryPath = \(documentsDirectory)")
+        return documentsDirectory
+    }
+    
+    
+    // replace 'Document' with more specific name (e.g. getWhistleUrl)
+    // then add an appending path component (preferably from Keys in Constants+Utils)
+    class func getWhistleURL() -> URL
+    {
+        return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
     }
 }
