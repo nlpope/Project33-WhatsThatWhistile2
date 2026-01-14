@@ -5,13 +5,15 @@
 import UIKit
 import AVFoundation
 
-class RecordWhistleVC: UIViewController
+class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
 {
     var stackView: UIStackView!
     
     var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var whistleRecorder: AVAudioRecorder!
+    static var recordIndex = 0
+    //save record index
     
     
     override func loadView()
@@ -104,7 +106,8 @@ class RecordWhistleVC: UIViewController
     
     @objc func recordTapped()
     {
-        
+        if whistleRecorder == nil { startRecording() }
+        else { finishRecording(success: true) }
     }
     
     
@@ -134,7 +137,34 @@ class RecordWhistleVC: UIViewController
     
     func finishRecording(success: Bool)
     {
+        view.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
         
+        whistleRecorder.stop()
+        whistleRecorder = nil
+        
+        if success {
+            recordButton.setTitle("Tap to Re-record:", for: .normal)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextTapped))
+        } else {
+            recordButton.setTitle("Tap to Record", for: .normal)
+            
+            let msg = "there was a problem recording your whistle. Please try again."
+            let ac = UIAlertController(title: "Record failed", message: msg, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
+    
+    @objc func nextTapped()
+    {
+        
+    }
+    
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool)
+    {
+        if !flag { finishRecording(success: false) }
     }
     
     //-------------------------------------//
@@ -154,6 +184,7 @@ class RecordWhistleVC: UIViewController
     // then add an appending path component (preferably from Keys in Constants+Utils)
     class func getWhistleURL() -> URL
     {
-        return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
+        recordIndex += 1
+        return getDocumentsDirectory().appendingPathComponent("whistle\(recordIndex).m4a")
     }
 }
