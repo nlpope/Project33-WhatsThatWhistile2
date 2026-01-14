@@ -12,8 +12,8 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var whistleRecorder: AVAudioRecorder!
+    var playButton: UIButton!
     static var recordIndex = 0
-    //save record index
     
     
     override func loadView()
@@ -70,18 +70,17 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
             try recordingSession.setActive(true)
+            #warning("why is this unowned?")
             recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async { allowed ? self.loadRecordingUI() : self.loadFailUI() }
+                DispatchQueue.main.async { allowed ? self.configRecordingUI() : self.configFailUI() }
             }
         } catch {
-            self.loadFailUI()
+            self.configFailUI()
         }
     }
     
-    //-------------------------------------//
-    // MARK: - MAIN METHODS
     
-    func loadRecordingUI()
+    func configRecordingUI()
     {
         recordButton = UIButton()
         recordButton.translatesAutoresizingMaskIntoConstraints = false
@@ -90,10 +89,20 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
         
         stackView.addArrangedSubview(recordButton)
+        
+        playButton = UIButton()
+        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.setTitle("Tap to Play", for: .normal)
+        playButton.isHidden = true
+        playButton.alpha = 0
+        playButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        playButton.addTarget(self, action: #selector(playTapped), for: .touchUpInside)
+        
+        stackView.addArrangedSubview(playButton)
     }
     
     
-    func loadFailUI()
+    func configFailUI()
     {
         let failLabel = UILabel()
         failLabel.font = UIFont.preferredFont(forTextStyle: .headline)
@@ -103,6 +112,8 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
         stackView.addArrangedSubview(failLabel)
     }
     
+    //-------------------------------------//
+    // MARK: - SUPPORTING METHODS
     
     @objc func recordTapped()
     {
@@ -153,6 +164,12 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }
+    }
+    
+    
+    @objc func playTapped()
+    {
+        
     }
     
     
