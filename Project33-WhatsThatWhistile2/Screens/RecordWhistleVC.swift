@@ -179,7 +179,17 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     
     @objc func playTapped()
     {
+        let url = RecordWhistleVC.getWhistleURL()
         
+        do {
+            whistlePlayer = try AVAudioPlayer(contentsOf: url)
+            whistlePlayer.play()
+        } catch {
+            let msg = "There was a problem playing your whistle; please try re-recording."
+            let ac = UIAlertController(title: "Playback failed", message: msg, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     
