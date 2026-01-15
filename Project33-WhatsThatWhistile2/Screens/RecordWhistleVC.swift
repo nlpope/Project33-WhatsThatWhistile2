@@ -7,6 +7,7 @@ import AVFoundation
 
 class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
 {
+    static var genres = ["Unknown", "Blues", "Classical", "Electronic", "Jazz", "Metal", "Pop", "Reggaeton", "RnB", "Rock", "Soul"]
     var stackView: UIStackView!
     
     var recordButton: UIButton!
