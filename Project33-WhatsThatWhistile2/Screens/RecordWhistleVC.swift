@@ -12,6 +12,7 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var whistleRecorder: AVAudioRecorder!
+    var whistlePlayer: AVAudioPlayer!
     var playButton: UIButton!
     var recordingInBucket: Bool = false
     
@@ -50,10 +51,6 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
-        //OG CODE FROM BOOK, I REFACTORED IT TO REPEAT THE .ISACTIVE STUFF
-//        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
     
