@@ -13,7 +13,7 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     var recordingSession: AVAudioSession!
     var whistleRecorder: AVAudioRecorder!
     var playButton: UIButton!
-    static var recordIndex = 0
+    var recordingInBucket: Bool = false
     
     
     override func loadView()
@@ -115,9 +115,19 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     //-------------------------------------//
     // MARK: - SUPPORTING METHODS
     
+    func togglePlayButton()
+    {
+        if !recordingInBucket { return }
+        UIView.animate(withDuration: 0.35) { [unowned self] in
+            self.playButton.isHidden = self.playButton.isHidden ? false : true
+            self.playButton.alpha = self.playButton.isHidden ? 0 : 1
+        }
+    }
+    
+    
     @objc func recordTapped()
     {
-        if whistleRecorder == nil { startRecording() }
+        if whistleRecorder == nil { startRecording(); togglePlayButton() }
         else { finishRecording(success: true) }
     }
     
@@ -152,9 +162,11 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
         
         whistleRecorder.stop()
         whistleRecorder = nil
+        recordingInBucket = true
         
         if success {
             recordButton.setTitle("Tap to Re-record:", for: .normal)
+            togglePlayButton()
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextTapped))
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
@@ -197,11 +209,9 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     }
     
     
-    // replace 'Document' with more specific name (e.g. getWhistleUrl)
-    // then add an appending path component (preferably from Keys in Constants+Utils)
+   
     class func getWhistleURL() -> URL
     {
-        recordIndex += 1
-        return getDocumentsDirectory().appendingPathComponent("whistle\(recordIndex).m4a")
+        return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
     }
 }

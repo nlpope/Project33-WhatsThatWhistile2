@@ -110,8 +110,8 @@
 		400478632F0EC31600DB906C /* Project33-WhatsThatWhistile2 */ = {
 			isa = PBXGroup;
 			children = (
-				4004786D2F0EC33400DB906C /* Support */,
 				4004786E2F0EC3A600DB906C /* Screens */,
+				4004786D2F0EC33400DB906C /* Support */,
 				4004785B2F0EC31600DB906C /* Info.plist */,
 			);
 			path = "Project33-WhatsThatWhistile2";
