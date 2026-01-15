@@ -118,6 +118,7 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     func togglePlayButton()
     {
         if !recordingInBucket { return }
+        #warning("why unowned self")
         UIView.animate(withDuration: 0.35) { [unowned self] in
             self.playButton.isHidden = self.playButton.isHidden ? false : true
             self.playButton.alpha = self.playButton.isHidden ? 0 : 1
@@ -209,7 +210,6 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     }
     
     
-   
     class func getWhistleURL() -> URL
     {
         return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
