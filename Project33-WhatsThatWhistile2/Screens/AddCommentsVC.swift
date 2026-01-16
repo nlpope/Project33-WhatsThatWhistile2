@@ -4,31 +4,69 @@
 
 import UIKit
 
-class AddCommentsVC: UIViewController {
+class AddCommentsVC: UIViewController, UITextViewDelegate
+{
     var genre: String!
-    var comments: UITextView!
+    var commentsView: UITextView!
     let placeholder = "If you have any additional comments that might help identify your tune, enter them here."
     
     
-    override func loadView() {
-        //left off @ "We're going to override the loadView() method of this class...”
+    override func loadView()
+    {
+        configView()
+        configCommentsView()
     }
 
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //-------------------------------------//
+    // MARK: - CONFIGURATION
+    
+    func configNavigation()
+    {
+        title = "Comments"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(submitTapped))
+        commentsView.text = placeholder
     }
-    */
-
+    
+    
+    func configView()
+    {
+        view = UIView()
+        view.backgroundColor = .white
+    }
+    
+    
+    func configCommentsView()
+    {
+        commentsView = UITextView()
+        commentsView.translatesAutoresizingMaskIntoConstraints = false
+        commentsView.delegate = self
+        commentsView.font = UIFont.preferredFont(forTextStyle: .body)
+        
+        view.addSubview(commentsView)
+        
+        NSLayoutConstraint.activate([
+            commentsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            commentsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            commentsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            commentsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    //-------------------------------------//
+    // MARK: - SUPPORTING METHODS
+    
+    @objc func submitTapped()
+    {
+        let vc = SubmitVC()
+        vc.genre = genre
+        vc.comments = commentsView.text == placeholder ? "" : commentsView.text
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
