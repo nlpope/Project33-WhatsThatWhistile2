@@ -7,9 +7,9 @@ import UIKit
 class AddCommentsVC: UIViewController, UITextViewDelegate
 {
     var genre: String!
+    //commentsView.text from here on is considered metadata b/c it's carried over to other VC's
     var commentsView: UITextView!
     let placeholder = "If you have any additional comments that might help identify your tune, enter them here."
-    
     
     override func loadView()
     {
@@ -68,5 +68,14 @@ class AddCommentsVC: UIViewController, UITextViewDelegate
         vc.comments = commentsView.text == placeholder ? "" : commentsView.text
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        #warning("when is this triggered and why would it match the placeholder if they've already edited it to be different by @ least 1 char")
+        print("textViewDidBeginEditing triggered")
+        
+        if textView.text == placeholder { textView.text = "" }
     }
 }

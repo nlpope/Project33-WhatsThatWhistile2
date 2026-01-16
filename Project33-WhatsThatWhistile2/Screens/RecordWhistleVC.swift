@@ -16,7 +16,6 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     var playButton: UIButton!
     var recordingInBucket: Bool = false
     
-    
     override func loadView()
     {
         configStackView()

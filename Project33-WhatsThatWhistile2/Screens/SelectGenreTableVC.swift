@@ -6,6 +6,7 @@ import UIKit
 
 class SelectGenreTableVC: UITableViewController
 {
+    //genre from here on is considered metadata b/c it's carried over to other VC's
     static var genres = ["Unknown", "Blues", "Classical", "Electronic", "Jazz", "Metal", "Pop", "Reggaeton", "RnB", "Rock", "Soul"]
 
     override func viewDidLoad()

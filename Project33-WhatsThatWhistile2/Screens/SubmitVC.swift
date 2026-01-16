@@ -8,10 +8,34 @@ class SubmitVC: UIViewController
 {
     var genre: String!
     var comments: String!
+    var stackView: UIStackView!
+    var status: UILabel!
+    var spinner: UIActivityIndicatorView!
+    
+    override func loadView()
+    {
+        configView()
+        configStackView()
+    }
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    }
+    
+    //-------------------------------------//
+    // MARK: - CONFIGURATION
+    
+    func configView()
+    {
+        view = UIView()
+        view.backgroundColor = UIColor.gray
+    }
+    
+    
+    func configStackView()
+    {
         
     }
 }
