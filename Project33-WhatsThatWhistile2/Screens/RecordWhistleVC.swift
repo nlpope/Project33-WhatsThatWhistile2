@@ -7,7 +7,6 @@ import AVFoundation
 
 class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
 {
-    static var genres = ["Unknown", "Blues", "Classical", "Electronic", "Jazz", "Metal", "Pop", "Reggaeton", "RnB", "Rock", "Soul"]
     var stackView: UIStackView!
     
     var recordButton: UIButton!
@@ -34,6 +33,13 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
     //-------------------------------------//
     // MARK: - CONFIGURATION
     
+    func configNavigation()
+    {
+        title = "Record your whistle"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Record", style: .plain, target: nil, action: nil)
+    }
+    
+    
     func configStackView()
     {
         view = UIView()
@@ -52,13 +58,6 @@ class RecordWhistleVC: UIViewController, AVAudioRecorderDelegate
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-    }
-    
-    
-    func configNavigation()
-    {
-        title = "Record your whistle"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Record", style: .plain, target: nil, action: nil)
     }
     
     
