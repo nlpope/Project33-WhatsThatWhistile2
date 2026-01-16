@@ -15,7 +15,8 @@
 		4004786B2F0EC31600DB906C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4004785D2F0EC31600DB906C /* LaunchScreen.storyboard */; };
 		4004786C2F0EC31600DB906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4004785F2F0EC31600DB906C /* Main.storyboard */; };
 		400478702F0EC83600DB906C /* RecordWhistleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */; };
-		40A6C1412F19FDA300C10EBC /* SelectGenreVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6C1402F19FDA300C10EBC /* SelectGenreVCTableViewController.swift */; };
+		40A6C1412F19FDA300C10EBC /* SelectGenreTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6C1402F19FDA300C10EBC /* SelectGenreTableVC.swift */; };
+		40A6C1432F1A046700C10EBC /* AddCommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6C1422F1A046700C10EBC /* AddCommentsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,8 @@
 		400478622F0EC31600DB906C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		400478642F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project33_WhatsThatWhistile2.xcdatamodel; sourceTree = "<group>"; };
 		4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleVC.swift; sourceTree = "<group>"; };
-		40A6C1402F19FDA300C10EBC /* SelectGenreVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreVCTableViewController.swift; sourceTree = "<group>"; };
+		40A6C1402F19FDA300C10EBC /* SelectGenreTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreTableVC.swift; sourceTree = "<group>"; };
+		40A6C1422F1A046700C10EBC /* AddCommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -137,7 +139,8 @@
 			children = (
 				400478622F0EC31600DB906C /* ViewController.swift */,
 				4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */,
-				40A6C1402F19FDA300C10EBC /* SelectGenreVCTableViewController.swift */,
+				40A6C1402F19FDA300C10EBC /* SelectGenreTableVC.swift */,
+				40A6C1422F1A046700C10EBC /* AddCommentsVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -287,10 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				400478652F0EC31600DB906C /* AppDelegate.swift in Sources */,
+				40A6C1432F1A046700C10EBC /* AddCommentsVC.swift in Sources */,
 				400478662F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodeld in Sources */,
 				400478672F0EC31600DB906C /* SceneDelegate.swift in Sources */,
 				400478702F0EC83600DB906C /* RecordWhistleVC.swift in Sources */,
-				40A6C1412F19FDA300C10EBC /* SelectGenreVCTableViewController.swift in Sources */,
+				40A6C1412F19FDA300C10EBC /* SelectGenreTableVC.swift in Sources */,
 				400478682F0EC31600DB906C /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
