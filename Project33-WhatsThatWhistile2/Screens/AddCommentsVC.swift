@@ -6,6 +6,13 @@ import UIKit
 
 class AddCommentsVC: UIViewController {
     var genre: String!
+    var comments: UITextView!
+    let placeholder = "If you have any additional comments that might help identify your tune, enter them here."
+    
+    
+    override func loadView() {
+        //left off @ "We're going to override the loadView() method of this class...”
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

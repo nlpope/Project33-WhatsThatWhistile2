@@ -50,7 +50,7 @@ class SelectGenreTableVC: UITableViewController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         if let cell = tableView.cellForRow(at: indexPath) {
-            let genre = cell.textLabel?.text ?? SelectGenreTableVC.genres[0] //conditional binding vs nilcoall
+            let genre = cell.textLabel?.text ?? SelectGenreTableVC.genres[0] 
             let vc = AddCommentsVC()
             vc.genre = genre
             navigationController?.pushViewController(vc, animated: true)
