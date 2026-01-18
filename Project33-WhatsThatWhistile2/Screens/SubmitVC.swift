@@ -100,7 +100,9 @@ class SubmitVC: UIViewController
     
     func doSubmission()
     {
-        
+        //1 create the record to send to icloud
+        let whistleRecord = CKRecord(recordType: "Whistles")
+        //2 handle the result
     }
     
     

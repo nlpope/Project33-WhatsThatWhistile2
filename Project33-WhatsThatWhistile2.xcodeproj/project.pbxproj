@@ -16,6 +16,7 @@
 		4004786C2F0EC31600DB906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4004785F2F0EC31600DB906C /* Main.storyboard */; };
 		400478702F0EC83600DB906C /* RecordWhistleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */; };
 		4099ABA42F1A9312004F7288 /* SubmitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4099ABA32F1A9312004F7288 /* SubmitVC.swift */; };
+		4099ABA82F1D8089004F7288 /* Constants+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4099ABA72F1D8089004F7288 /* Constants+Utils.swift */; };
 		40A6C1412F19FDA300C10EBC /* SelectGenreTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6C1402F19FDA300C10EBC /* SelectGenreTableVC.swift */; };
 		40A6C1432F1A046700C10EBC /* AddCommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6C1422F1A046700C10EBC /* AddCommentsVC.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		4004786F2F0EC83600DB906C /* RecordWhistleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleVC.swift; sourceTree = "<group>"; };
 		4099ABA32F1A9312004F7288 /* SubmitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitVC.swift; sourceTree = "<group>"; };
 		4099ABA52F1D416E004F7288 /* Project33-WhatsThatWhistile2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project33-WhatsThatWhistile2.entitlements"; sourceTree = "<group>"; };
+		4099ABA72F1D8089004F7288 /* Constants+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Utils.swift"; sourceTree = "<group>"; };
 		40A6C1402F19FDA300C10EBC /* SelectGenreTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreTableVC.swift; sourceTree = "<group>"; };
 		40A6C1422F1A046700C10EBC /* AddCommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 		400478632F0EC31600DB906C /* Project33-WhatsThatWhistile2 */ = {
 			isa = PBXGroup;
 			children = (
+				4099ABA62F1D807A004F7288 /* Utilities */,
 				4099ABA52F1D416E004F7288 /* Project33-WhatsThatWhistile2.entitlements */,
 				4004786E2F0EC3A600DB906C /* Screens */,
 				4004786D2F0EC33400DB906C /* Support */,
@@ -148,6 +151,14 @@
 				4099ABA32F1A9312004F7288 /* SubmitVC.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		4099ABA62F1D807A004F7288 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4099ABA72F1D8089004F7288 /* Constants+Utils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				40A6C1432F1A046700C10EBC /* AddCommentsVC.swift in Sources */,
 				400478662F0EC31600DB906C /* Project33_WhatsThatWhistile2.xcdatamodeld in Sources */,
 				400478672F0EC31600DB906C /* SceneDelegate.swift in Sources */,
+				4099ABA82F1D8089004F7288 /* Constants+Utils.swift in Sources */,
 				400478702F0EC83600DB906C /* RecordWhistleVC.swift in Sources */,
 				40A6C1412F19FDA300C10EBC /* SelectGenreTableVC.swift in Sources */,
 				4099ABA42F1A9312004F7288 /* SubmitVC.swift in Sources */,
