@@ -25,7 +25,8 @@ class SelectGenreTableVC: UITableViewController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
-    // MARK: - Table view data source
+    //-------------------------------------//
+    // MARK: - DATASOURCE & DELEGATE METHODS
 
     override func numberOfSections(in tableView: UITableView) -> Int
     {

@@ -24,10 +24,25 @@ class SubmitVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        configNavigation()
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        doSubmission()
     }
     
     //-------------------------------------//
     // MARK: - CONFIGURATION
+    
+    func configNavigation()
+    {
+        title = "You're all set"
+        navigationItem.hidesBackButton = true
+    }
+    
     
     func configView()
     {
@@ -77,5 +92,19 @@ class SubmitVC: UIViewController
         spinner.startAnimating()
         
         stackView.addArrangedSubview(spinner)
+    }
+    
+    //-------------------------------------//
+    // MARK: - SUPPORTING METHODS
+    
+    func doSubmission()
+    {
+        
+    }
+    
+    
+    @objc func doneTapped()
+    {
+        
     }
 }
