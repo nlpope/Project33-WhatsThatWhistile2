@@ -1,10 +1,10 @@
-//  File: ViewController.swift
+//  File: HomeVC.swift
 //  Project: Project33-WhatsThatWhistile2
 //  Created by: Noah Pope on 1/7/26.
 
 import UIKit
 
-class ViewController: UIViewController
+class HomeVC: UIViewController
 {
     override func viewDidLoad()
     {

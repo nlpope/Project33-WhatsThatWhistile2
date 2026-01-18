@@ -3,6 +3,7 @@
 //  Created by: Noah Pope on 1/16/26.
 
 import UIKit
+import CloudKit
 
 class SubmitVC: UIViewController
 {
@@ -105,6 +106,6 @@ class SubmitVC: UIViewController
     
     @objc func doneTapped()
     {
-        
+        _ = navigationController?.popToRootViewController(animated: true)
     }
 }
