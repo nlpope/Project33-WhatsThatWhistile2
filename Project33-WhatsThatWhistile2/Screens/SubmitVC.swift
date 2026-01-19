@@ -111,7 +111,17 @@ class SubmitVC: UIViewController
         whistleRecord["audio"] = whistleAsset
         
         //2 handle the result
-        
+        CKContainer.default().publicCloudDatabase.save(whistleRecord) { [unowned self] record, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.statusLabel.text = "Error: \(error.localizedDescription)"
+                    self.spinner.stopAnimating()
+                } else {
+                    self.view.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
+                    self.statusLabel.text = ""
+                }
+            }
+        }
     }
     
     
