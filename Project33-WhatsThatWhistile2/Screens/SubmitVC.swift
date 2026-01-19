@@ -14,6 +14,8 @@ class SubmitVC: UIViewController
     var statusLabel: UILabel!
     var spinner: UIActivityIndicatorView!
     
+    static var isDirty: Bool = false
+    
     override func loadView()
     {
         configView()
@@ -118,12 +120,16 @@ class SubmitVC: UIViewController
                     self.spinner.stopAnimating()
                 } else {
                     self.view.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
-                    self.statusLabel.text = ""
+                    self.statusLabel.text = "Done!"
+                    
+                    self.spinner.stopAnimating()
+                    SubmitVC.isDirty = true
                 }
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneTapped))
             }
         }
     }
-    
+
     
     @objc func doneTapped()
     {
