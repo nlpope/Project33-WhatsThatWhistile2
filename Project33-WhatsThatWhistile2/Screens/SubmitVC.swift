@@ -9,6 +9,7 @@ class SubmitVC: UIViewController
 {
     var genre: String!
     var comments: String!
+    
     var stackView: UIStackView!
     var statusLabel: UILabel!
     var spinner: UIActivityIndicatorView!
@@ -101,8 +102,16 @@ class SubmitVC: UIViewController
     func doSubmission()
     {
         //1 create the record to send to icloud
-        let whistleRecord = CKRecord(recordType: "Whistles")
+        let whistleRecord = CKRecord(recordType: CKRecordStrings.whistles)
+        whistleRecord["genre"] = genre as CKRecordValue
+        whistleRecord["comments"] = comments as CKRecordValue
+        
+        let audioURL = RecordWhistleVC.getWhistleURL()
+        let whistleAsset = CKAsset(fileURL: audioURL)
+        whistleRecord["audio"] = whistleAsset
+        
         //2 handle the result
+        
     }
     
     
