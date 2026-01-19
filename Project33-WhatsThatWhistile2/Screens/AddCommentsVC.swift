@@ -21,6 +21,7 @@ class AddCommentsVC: UIViewController, UITextViewDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        configNavigation()
     }
     
     //-------------------------------------//
